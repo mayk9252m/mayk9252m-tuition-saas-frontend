@@ -5,7 +5,7 @@ import toast from 'react-hot-toast';
 
 const CLASSES = ['1','2','3','4','5','6','7','8','9','10','11','12'];
 const SCHOOLS = [
-  'N.P.S. International School', 'Kendriya Vidyalaya', 'J.P International School',
+  'N.P.S. International School', 'Kendriya Vidyalaya', 'J.P International Public School',
   'SD Gurukul School', 'Sanskar public school', 'N.V.S. Public School',
   'Bloom Public School', 'Bloom International School', 'Other'
 ];
