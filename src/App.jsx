@@ -17,7 +17,7 @@ const ProtectedRoute = ({ children }) => {
     <div className="min-h-screen flex items-center justify-center bg-ink-50">
       <div className="text-center">
         <div className="w-10 h-10 border-2 border-ink-200 border-t-ink-900 rounded-full animate-spin mx-auto mb-3" />
-        <p className="text-sm text-ink-400">Loading TuitionPro...</p>
+        <p className="text-sm text-ink-400">Loading Shashi Institute of Education...</p>
       </div>
     </div>
   );
