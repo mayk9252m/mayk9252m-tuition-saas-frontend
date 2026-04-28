@@ -5,9 +5,9 @@ import toast from 'react-hot-toast';
 
 const CLASSES = ['1','2','3','4','5','6','7','8','9','10','11','12'];
 const SCHOOLS = [
-  'Delhi Public School', 'Kendriya Vidyalaya', 'Ryan International School',
-  'DAV Public School', 'Army Public School', 'St. Xavier School',
-  'Modern School', 'Bal Bharati Public School', 'Other'
+  'N.P.S. International School', 'Kendriya Vidyalaya', 'J.P International School',
+  'SD Gurukul School', 'Sanskar public school', 'N.V.S. Public School',
+  'Bloom Public School', 'Bloom International School', 'Other'
 ];
 
 const initialForm = {
