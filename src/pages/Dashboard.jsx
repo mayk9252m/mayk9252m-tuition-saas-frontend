@@ -36,7 +36,7 @@ export default function Dashboard() {
       {/* Header */}
       <div>
         <p className="text-sm text-ink-400 font-medium">{today}</p>
-        <h1 className="page-title mt-0.5">Welcome back, Mayank Shrivastava {user?.name?.split(' ')[0]} 👋</h1>
+        <h1 className="page-title mt-0.5">Welcome back, {user?.name?.split(' ')[0]} 👋</h1>
         <p className="text-ink-500 text-sm mt-1">Here's what's happening with your students today.</p>
       </div>
 
