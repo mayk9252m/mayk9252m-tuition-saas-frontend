@@ -11,9 +11,9 @@ const SCHOOLS = [
 ];
 
 const initialForm = {
-  studentName: '', fatherName: '', motherName: '',
-  class: '', school: '', whatsappNumber: '',
-  dateOfJoining: '', monthlyFees: ''
+  StudentName: '', FatherName: '', MotherName: '',
+  Class: '', School: '', WhatsAppNumber: '',
+  DateOfJoining: '', MonthlyFees: ''
 };
 
 export default function AddStudentModal({ isOpen, onClose, onSuccess }) {
@@ -29,11 +29,11 @@ export default function AddStudentModal({ isOpen, onClose, onSuccess }) {
     try {
       const data = {
         ...form,
-        school: form.school === 'Other' ? customSchool : form.school,
-        monthlyFees: Number(form.monthlyFees)
+        school: form.School === 'Other' ? customSchool : form.School,
+        monthlyFees: Number(form.MonthlyFees)
       };
       await studentsAPI.create(data);
-      toast.success(`${form.studentName} added successfully!`);
+      toast.success(`${form.StudentName} added successfully!`);
       setForm(initialForm);
       setCustomSchool('');
       onSuccess();
@@ -52,11 +52,11 @@ export default function AddStudentModal({ isOpen, onClose, onSuccess }) {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="label">Student Name *</label>
-            <input className="input" placeholder="Full name" value={form.studentName} onChange={set('studentName')} required />
+            <input className="input" placeholder="Full name" value={form.StudentName} onChange={set('StudentName')} required />
           </div>
           <div>
             <label className="label">Class *</label>
-            <select className="input" value={form.class} onChange={set('class')} required>
+            <select className="input" value={form.Class} onChange={set('Class')} required>
               <option value="">Select Class</option>
               {CLASSES.map(c => <option key={c} value={c}>Class {c}</option>)}
             </select>
@@ -67,11 +67,11 @@ export default function AddStudentModal({ isOpen, onClose, onSuccess }) {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="label">Father's Name *</label>
-            <input className="input" placeholder="Father's full name" value={form.fatherName} onChange={set('fatherName')} required />
+            <input className="input" placeholder="Father's full name" value={form.FatherName} onChange={set('FatherName')} required />
           </div>
           <div>
             <label className="label">Mother's Name *</label>
-            <input className="input" placeholder="Mother's full name" value={form.motherName} onChange={set('motherName')} required />
+            <input className="input" placeholder="Mother's full name" value={form.MotherName} onChange={set('MotherName')} required />
           </div>
         </div>
 
@@ -79,12 +79,12 @@ export default function AddStudentModal({ isOpen, onClose, onSuccess }) {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="label">School *</label>
-            <select className="input" value={form.school} onChange={set('school')} required>
+            <select className="input" value={form.School} onChange={set('School')} required>
               <option value="">Select School</option>
               {SCHOOLS.map(s => <option key={s} value={s}>{s}</option>)}
             </select>
           </div>
-          {form.school === 'Other' && (
+          {form.School === 'Other' && (
             <div>
               <label className="label">School Name *</label>
               <input className="input" placeholder="Enter school name"
@@ -96,7 +96,7 @@ export default function AddStudentModal({ isOpen, onClose, onSuccess }) {
             <div className="flex">
               <span className="flex items-center px-3 bg-ink-50 border border-r-0 border-ink-200 rounded-l-xl text-sm text-ink-600">+91</span>
               <input className="input rounded-l-none" placeholder="10-digit number"
-                value={form.whatsappNumber} onChange={set('whatsappNumber')}
+                value={form.WhatsAppNumber} onChange={set('WhatsAppNumber')}
                 pattern="[0-9]{10}" maxLength={10} required />
             </div>
           </div>
@@ -106,12 +106,12 @@ export default function AddStudentModal({ isOpen, onClose, onSuccess }) {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="label">Date of Joining *</label>
-            <input type="date" className="input" value={form.dateOfJoining} onChange={set('dateOfJoining')} required />
+            <input type="date" className="input" value={form.DateOfJoining} onChange={set('DateOfJoining')} required />
           </div>
           <div>
             <label className="label">Monthly Fees (₹) *</label>
             <input type="number" className="input" placeholder="e.g. 2000" min="0"
-              value={form.monthlyFees} onChange={set('monthlyFees')} required />
+              value={form.MonthlyFees} onChange={set('MonthlyFees')} required />
           </div>
         </div>
 
