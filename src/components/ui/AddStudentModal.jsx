@@ -29,8 +29,8 @@ export default function AddStudentModal({ isOpen, onClose, onSuccess }) {
     try {
       const data = {
         ...form,
-        school: form.School === 'Other' ? customSchool : form.School,
-        monthlyFees: Number(form.MonthlyFees)
+        School: form.School === 'Other' ? customSchool : form.School,
+        MonthlyFees: Number(form.MonthlyFees)
       };
       await studentsAPI.create(data);
       toast.success(`${form.StudentName} added successfully!`);
@@ -39,7 +39,7 @@ export default function AddStudentModal({ isOpen, onClose, onSuccess }) {
       onSuccess();
       onClose();
     } catch (err) {
-      toast.error(err.response?.data?.message || 'Failed to add student');
+      toast.error(err.response?.data?.message || 'Failed to add Student');
     } finally {
       setLoading(false);
     }
@@ -87,7 +87,7 @@ export default function AddStudentModal({ isOpen, onClose, onSuccess }) {
           {form.School === 'Other' && (
             <div>
               <label className="label">School Name *</label>
-              <input className="input" placeholder="Enter school name"
+              <input className="input" placeholder="Enter School name"
                 value={customSchool} onChange={e => setCustomSchool(e.target.value)} required />
             </div>
           )}
