@@ -34,7 +34,7 @@ export default function Sidebar() {
             <BookOpen size={18} className="text-amber-400" />
           </div>
           <div>
-            <div className="font-display font-semibold text-ink-900 text-lg leading-none">TuitionPro</div>
+            <div className="font-display font-semibold text-ink-900 text-lg leading-none">Shashi Institute of Education</div>
             <div className="text-xs text-ink-500 mt-0.5">Management Suite</div>
           </div>
         </div>
