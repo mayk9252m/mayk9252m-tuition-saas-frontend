@@ -13,9 +13,9 @@ import {
 import { format } from 'date-fns';
 import toast from 'react-hot-toast';
 
-const SUBJECTS = ['Mathematics', 'Science', 'English', 'Hindi', 'Social Science',
+const SUBJECTS = ['Mathematics', 'Science', 'English', 'Hindi', 'Social Studies',
   'Physics', 'Chemistry', 'Biology', 'History', 'Geography',
-  'Economics', 'Computer Science', 'Sanskrit', 'Other'];
+  'Economics', 'Computer', 'EVS', 'GK', 'Other'];
 
 const gradeLabel = (pct) => {
   if (pct >= 90) return { g: 'A+', color: 'text-emerald-600' };
