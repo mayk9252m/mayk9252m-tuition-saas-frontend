@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import {
   LayoutDashboard, Users, CalendarCheck, Wallet,
-  BarChart3, LogOut, Menu, X, BookOpen, Bell
+  BarChart3, LogOut, Menu, X, BookOpen, Bell, ClipboardList
 } from 'lucide-react';
 
 const navItems = [
@@ -12,6 +12,7 @@ const navItems = [
   { to: '/attendance', label: 'Attendance', icon: CalendarCheck },
   { to: '/fees', label: 'Fees', icon: Wallet },
   { to: '/analytics', label: 'Analytics', icon: BarChart3 },
+  { to: '/tests', label: 'Test Results', icon: ClipboardList },
 ];
 
 export default function Sidebar() {

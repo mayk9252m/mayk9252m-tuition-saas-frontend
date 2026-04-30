@@ -64,3 +64,11 @@ export const analyticsAPI = {
 };
 
 export default api;
+
+// Test APIs
+export const testAPI = {
+  getAllSummary: (params) => api.get('/tests', { params }),
+  getStudentTests: (studentId, params) => api.get(`/tests/${studentId}`, { params }),
+  addResult: (studentId, data) => api.post(`/tests/${studentId}`, data),
+  deleteResult: (studentId, testId) => api.delete(`/tests/${studentId}/${testId}`)
+};
