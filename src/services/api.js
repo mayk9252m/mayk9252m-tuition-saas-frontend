@@ -65,8 +65,8 @@ export const analyticsAPI = {
 
 export default api;
 
-// Test APIs
-export const testAPI = {
+// Tests APIs
+export const testsAPI = {
   getAllSummary: (params) => api.get('/tests', { params }),
   getStudentTests: (studentId, params) => api.get(`/tests/${studentId}`, { params }),
   addResult: (studentId, data) => api.post(`/tests/${studentId}`, data),
