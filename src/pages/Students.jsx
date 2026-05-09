@@ -145,6 +145,10 @@ export default function Students() {
                     <Phone size={14} className="text-ink-400 flex-shrink-0" />
                     <span>+91 {student.whatsappNumber}</span>
                   </div>
+                  <div className="flex items-center gap-2 text-sm text-ink-600">
+                    <School size={14} className="text-ink-400 flex-shrink-0" />
+                    <span className="truncate">{student.dateOfJoining}</span>
+                  </div>
                 </div>
 
                 {/* Badges */}
