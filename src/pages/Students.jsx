@@ -4,6 +4,16 @@ import { PageLoader, EmptyState, ConfirmModal, Badge } from '../components/ui';
 import AddStudentModal from '../components/ui/AddStudentModal';
 import { Users, Plus, Trash2, Phone, School, GraduationCap, Search } from 'lucide-react';
 import toast from 'react-hot-toast';
+import { format, parseISO } from 'date-fns';
+
+const formatDate = (dateStr) => {
+  if (!dateStr) return '-';
+  try {
+    return format(parseISO(dateStr), 'dd MMM yyyy');
+  } catch {
+    return dateStr;
+  }
+}
 
 export default function Students() {
   const [students, setStudents] = useState([]);
@@ -132,6 +142,24 @@ export default function Students() {
                 </div>
 
                 {/* Info */}
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-xs font-mono font-bold bg-ink-900 text-amber-400 px-2.5 py-1 rounded-lg tracking-wider">
+                    {student.studentId || 'ID not generated'}
+                  </span>
+                  {student.studentId && (
+                    <button
+                    onClick={() =>{
+                      navigator.clipboard.writeText(student.studentId);
+                      toast.success('Student ID copied! ');
+                    }}
+                    className="text-xs text-ink-400 hover:text-ink-700 transition-colors"
+                    title="Copy Student ID"
+                    >
+                      📋
+                    </button>
+                  )}
+                </div>
+                
                 <div className="space-y-2 mb-4">
                   <div className="flex items-center gap-2 text-sm text-ink-600">
                     <GraduationCap size={14} className="text-ink-400 flex-shrink-0" />
@@ -147,7 +175,7 @@ export default function Students() {
                   </div>
                   <div className="flex items-center gap-2 text-sm text-ink-600">
                     <School size={14} className="text-ink-400 flex-shrink-0" />
-                    <span className="truncate">{student.dateOfJoining}</span>
+                    <span className="truncate">{formatDate(student.dateOfJoining)}</span>
                   </div>
                 </div>
 
